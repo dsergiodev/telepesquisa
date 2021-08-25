@@ -22,28 +22,29 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: #F0D2D2;">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-light navbar-expand-md shadow-sm" style="background-color: #DA7272;">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <a href="{{ url('/') }}""><img src="http://api.telepesquisa.com.br/system/clientes/logos/000/214/121/large/telelogo.jpg" style="width:55px;height:55px;"></a>
+                
 
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/empresas">Empresas <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/empresas">Todas as empresas <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categorias">Categorias</a>
+                    <a class="nav-link" href="/categorias">Por categorias</a>
                 </li>
+
+               
                 </ul>
 
                 
-
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -77,6 +78,12 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Deslogar') }}
                                     </a>
+
+                                    @if ( Auth::user()->role_id == 3 )
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/admin') }}">{{ __('Admin') }}</a>
+                                        </li>
+                                    @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
