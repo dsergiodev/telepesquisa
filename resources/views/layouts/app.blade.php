@@ -80,9 +80,9 @@
                                     </a>
 
                                     @if ( Auth::user()->role_id == 3 )
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/admin') }}">{{ __('Admin') }}</a>
-                                        </li>
+                                      
+                                            <a class="dropdown-item" href="{{ url('/admin') }}">{{ __('Admin') }}</a>
+                                       
                                     @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
