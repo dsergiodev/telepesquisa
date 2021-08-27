@@ -10,7 +10,6 @@ $parameter = 'http://localhost:8000/storage/'.$parameter1;
       <div class="col-sm-5">
         <img class="card-img-top img-fluid rounded float-left img-company" src="{{ $parameter }}" style="width:100%">
       </div>
-
     <div class="col-sm-7">
       <div class="card-body">
         <h5 class="card-title text-uppercase text-danger">{{ $empresax->name }}</h5>
