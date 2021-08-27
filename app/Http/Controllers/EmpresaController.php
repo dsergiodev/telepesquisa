@@ -11,4 +11,5 @@ class EmpresaController extends Controller
 	$empresa = Empresa::all();
 	return view('empresas', ['empresa' => $empresa]);
     }
+
 }
