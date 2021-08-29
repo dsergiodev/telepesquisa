@@ -7,6 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <meta name="theme-color" content="#ffffff">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -28,19 +30,16 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-sm">
                 <div class="container">
 
-                    <a class="navbar-brend" href="{{ url('/') }}""><img src="http://api.telepesquisa.com.br/system/clientes/logos/000/214/121/large/telelogo.jpg" style="width:55px;height:55px;"></a>
+                    <a class="navbar-brend" href="{{ url('/') }}"><img src="http://api.telepesquisa.com.br/system/clientes/logos/000/214/121/large/telelogo.jpg" style="width:55px;height:55px;"></a>
                     
 
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/empresas">Todas as empresas <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/categorias">Por categorias</a>
+                        <a class="nav-link" href="/categorias">Busca por categorias</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/cidades">Por cidade</a>
+                        <a class="nav-link" href="/cidades">Busca por cidade</a>
                     </li>
                     </ul>
 

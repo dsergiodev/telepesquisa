@@ -38,18 +38,4 @@
 	<br>
 </div>
 
-<div class="container scroll-content">
-
-
-    <div class="row justify-content-center">
-
-        <div class="col-md-12">
-                <div class="{{ $categorias->id }}">
-                @foreach($empresa as $empresax)
-                    @include('partials.empresa', ['empresax' => $empresax])
-                @endforeach
-                </div>
-        </div>
-    </div>
-</div>
 @endsection

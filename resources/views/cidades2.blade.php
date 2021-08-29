@@ -37,21 +37,4 @@
 	</form>
 	<br>
 </div>
-
-
-
-<div class="container">
-    <div class="row justify-content-center">
-        
-        <div class="col-md-12">
-                <div class="{{ $cidades->id }}">
-                
-                @foreach($empresa as $empresax)
-
-                                @include('partials.empresa', ['empresax' => $empresax])
-                @endforeach
-                </div>
-        </div>
-    </div>
-</div>
 @endsection

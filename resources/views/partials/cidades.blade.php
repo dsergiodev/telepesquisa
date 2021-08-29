@@ -1,1 +1,1 @@
-<a class="dropdown-item" href="/cidades/{{ $cidades->id }}">{{ $cidades->name }}</a>
+<option value="{{ $cidades->id }}">{{ $cidades->name }}</option>
