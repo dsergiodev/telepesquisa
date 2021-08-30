@@ -43,15 +43,26 @@
 <div class="container">
     <div class="row justify-content-center">
         
-        <div class="col-md-12">
-                <div class="{{ $cidades->id }}">
+        <div class="col-md-12 container">
+                
                 
                 @foreach($empresa as $empresax)
 
                                 @include('partials.empresa', ['empresax' => $empresax])
                 @endforeach
-                </div>
+				
+            <span>
+				{{ $empresa->links() }}
+			</span>
         </div>
+		
     </div>
 </div>
+
+<style>
+	.w-5, .flex-1{
+	display: none;
+	}
+</style>
+
 @endsection

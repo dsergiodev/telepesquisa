@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Empresa;
 use App\Models\Cidade;
+
 
 class CidadeController extends Controller
 {
@@ -28,7 +29,7 @@ class CidadeController extends Controller
             $empresa = DB::table('empresas')
             ->select('empresas.name', 'empresas.phone', 'empresas.description', 'empresas.banner')
             ->join('cidades', 'empresas.city_id', '=', 'cidades.id')
-            ->where('empresas.name', 'LIKE', '%'.$emp.'%')->get();
+            ->where('empresas.name', 'LIKE', '%'.$emp.'%')->paginate(5);
 
             return view('cidades', ['cidade' => $cidade, 'empresa' => $empresa]);
         } else{  //se não escolher a empresa, exibir todas as empresas da cidade escolhida
@@ -36,7 +37,7 @@ class CidadeController extends Controller
 
             $empresa = DB::table('empresas')
             ->select('empresas.name', 'empresas.phone', 'empresas.description', 'empresas.banner')
-            ->where('empresas.city_id', '=', $city)->get();
+            ->where('empresas.city_id', '=', $city)->paginate(5);
 
             return view('cidades', ['cidade' => $cidade, 'empresa' => $empresa]);
         }

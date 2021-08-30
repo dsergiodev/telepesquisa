@@ -51,5 +51,12 @@
                 </div>
         </div>
     </div>
+	{{ $empresa->links() }}
 </div>
+
+<style>
+	.w-5, .flex-1{
+	display: none;
+	}
+</style>
 @endsection
